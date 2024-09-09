@@ -5,3 +5,6 @@ export { SortPopup } from "./sort-popup";
 export { TopBar } from "./topBar";
 export { Title } from "./title";
 export { Filters } from "./filters";
+export { FilterCheckbox } from "./filter-checkbox";
+export { RangeSlider } from "./range-slider";
+export { CheckboxFiltersGroup } from "./checkbox-filters-group";
