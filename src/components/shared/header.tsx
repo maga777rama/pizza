@@ -1,10 +1,11 @@
 import React, { FC } from "react";
 import { cn } from "@/lib/utils";
-import { Container } from "@/components/shared/container";
+import { Container, SearchInput } from "@/components/shared";
 import Image from "next/image";
 import img1 from "../../public/logo.png";
 import { Button } from "@/components/ui";
 import { ArrowRight, ShoppingCart, User } from "lucide-react";
+import Link from "next/link";
 
 interface Props {
     className?: string;
@@ -15,18 +16,24 @@ export const Header: FC<Props> = ({ className }) => {
         <header className={cn("border border-b", className)}>
             <Container className="flex items-center justify-between py-8">
                 {/*левая часть*/}
-                <div className="flex items-center gap-4">
-                    <Image src={img1} alt="logo" width={35} height={35} />
-                    <div>
-                        {" "}
-                        <h1 className="text-2xl uppercase font-black ">
-                            Next Pizza
-                        </h1>
-                        <p className="text-sm text-gray-400 leading-3">
-                            вкусней уже некуда
-                        </p>
+                <Link href={"/"}>
+                    <div className="flex items-center gap-4">
+                        <Image src={img1} alt="logo" width={35} height={35} />
+                        <div>
+                            {" "}
+                            <h1 className="text-2xl uppercase font-black ">
+                                мага не лох
+                            </h1>
+                            <p className="text-sm text-gray-400 leading-3">
+                                хейтеры пидарасы
+                            </p>
+                        </div>
+                        <div></div>
                     </div>
-                    <div></div>
+                </Link>
+
+                <div className="mx-10 flex-1">
+                    <SearchInput />
                 </div>
 
                 {/*правая часть */}

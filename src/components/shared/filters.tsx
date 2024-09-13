@@ -47,11 +47,11 @@ export const Filters: FC<Props> = ({ className }) => {
                         value: "1",
                     },
                     {
-                        text: "Моццарелла",
+                        text: "Соус мясной",
                         value: "2",
                     },
                     {
-                        text: "Чеснок",
+                        text: "Килька в томате",
                         value: "3",
                     },
                     {
@@ -77,7 +77,7 @@ export const Filters: FC<Props> = ({ className }) => {
                         value: "2",
                     },
                     {
-                        text: "Чеснок",
+                        text: "Килька в томате",
                         value: "3",
                     },
                     {
@@ -85,7 +85,7 @@ export const Filters: FC<Props> = ({ className }) => {
                         value: "4",
                     },
                     {
-                        text: "Красный лук",
+                        text: "Шафран",
                         value: "5",
                     },
                     {
@@ -101,7 +101,7 @@ export const Filters: FC<Props> = ({ className }) => {
                         value: "2",
                     },
                     {
-                        text: "Чеснок",
+                        text: "Ананасы",
                         value: "3",
                     },
                     {
@@ -113,7 +113,7 @@ export const Filters: FC<Props> = ({ className }) => {
                         value: "5",
                     },
                     {
-                        text: "Томаты",
+                        text: "Шололад",
                         value: "6",
                     },
                 ]}
