@@ -1,9 +1,4 @@
-import {
-    Container,
-    Filters,
-    ProductCard,
-    ProductsGroupList,
-} from "@/components/shared";
+import { Container, Filters, ProductsGroupList } from "@/components/shared";
 import { Title } from "@/components/shared";
 import { TopBar } from "@/components/shared";
 

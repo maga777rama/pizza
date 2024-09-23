@@ -25,7 +25,7 @@ export const Header: FC<Props> = ({ className }) => {
                                 мага не лох
                             </h1>
                             <p className="text-sm text-gray-400 leading-3">
-                                хейтеры пидарасы
+                                хейтеры козлы
                             </p>
                         </div>
                         <div></div>

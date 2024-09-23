@@ -23,26 +23,20 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
         setFocused(false);
     });
 
-    // useDebounce(
-    //     async () => {
-    //         try {
-    //             console.log("ssdsdsds === " + searchQuery);
-    //             const response = await Api.product.search(searchQuery);
-    //             console.log("resp === " + response);
-    //             setProducts(response);
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     },
-    //     250,
-    //     [searchQuery],
-    // );
+    useDebounce(
+        async () => {
+            try {
+                const response = await Api.products.search(searchQuery);
+                console.log(response);
+                setProducts(response);
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        250,
+        [searchQuery],
+    );
 
-    useEffect(() => {
-        Api.products.search(searchQuery).then((items) => {
-            setProducts(items);
-        });
-    }, [searchQuery]);
     const onClickItem = () => {
         setFocused(false);
         setSearchQuery("");
@@ -72,7 +66,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
 
-                {1 && (
+                {products.length > 0 && (
                     <div
                         className={cn(
                             "absolute w-full bg-white rounded-xl py-2 top-14 shadow-md transition-all duration-200 invisible opacity-0 z-30",
