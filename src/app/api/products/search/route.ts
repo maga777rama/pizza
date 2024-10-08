@@ -10,6 +10,7 @@ export async function GET(req: NextRequest) {
                 mode: "insensitive",
             },
         },
+        take: 5,
     });
     return NextResponse.json(products);
 }

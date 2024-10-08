@@ -3,14 +3,16 @@
 import React, { FC } from "react";
 import { cn } from "@/lib/utils";
 import { useCategoryStore } from "@/store/category";
+import { Category } from "@prisma/client";
 
 interface Props {
+    items: Category[];
     className?: string;
 }
 
 const cats: { id: number; name: string }[] = [
     { id: 1, name: "Пиццы" },
-    { id: 2, name: "Комбо" },
+    { id: 2, name: "Завтрак" },
     { id: 3, name: "Закуски" },
     { id: 4, name: "Коктейли" },
     { id: 5, name: "Кофе" },
@@ -21,7 +23,6 @@ const cats: { id: number; name: string }[] = [
 export const Categories: FC<Props> = (className) => {
     const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);
     const categoryActiveId = useCategoryStore((state) => state.activeId);
-    console.log(categoryActiveId);
 
     return (
         <div

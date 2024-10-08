@@ -11,8 +11,6 @@ export const Filters: FC<Props> = ({ className }) => {
     const filters = useFilters();
     useQueryFilters(filters);
 
-    console.log(999, filters.prices.priceFrom);
-    console.log(111, filters.prices.priceTo);
     const items = ingredients.map((item) => ({
         value: String(item.id),
         text: item.name,
@@ -60,7 +58,7 @@ export const Filters: FC<Props> = ({ className }) => {
                         placeholder="0"
                         min={100}
                         max={1000}
-                        defaultValue={100}
+                        // defaultValue={100}
                         value={String(filters.prices.priceFrom)}
                         onChange={(e) =>
                             filters.setPrices(
@@ -74,7 +72,7 @@ export const Filters: FC<Props> = ({ className }) => {
                         placeholder="1000"
                         min={100}
                         max={1000}
-                        defaultValue={1000}
+                        // defaultValue={1000}
                         value={String(filters.prices.priceTo)}
                         onChange={(e) =>
                             filters.setPrices("priceTo", Number(e.target.value))

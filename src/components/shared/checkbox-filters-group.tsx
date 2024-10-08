@@ -58,8 +58,6 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
           )
         : (defaultItems || items).slice(0, limit);
 
-    console.log(list);
-
     const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value);
     };
