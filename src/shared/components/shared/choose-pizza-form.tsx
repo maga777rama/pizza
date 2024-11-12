@@ -6,13 +6,7 @@ import React from "react";
 import { Button } from "../ui";
 import { Ingredient, ProductItem } from "@prisma/client";
 import { GroupVariants, IngredientItem, PizzaImage } from "../shared";
-import {
-    mapPizzaType,
-    PizzaSize,
-    PizzaType,
-    pizzaTypes,
-} from "@/shared/constants/pizza";
-import { calcTotalPizzaPrice } from "@/shared/lib";
+import { PizzaSize, PizzaType, pizzaTypes } from "@/shared/constants/pizza";
 import { usePizzaOptions } from "@/shared/hooks/use-pizza-options";
 import { getPizzaDetails } from "@/shared/hooks";
 
@@ -22,7 +16,7 @@ interface Props {
     className?: string;
     ingredients: Ingredient[];
     items: ProductItem[];
-    onClickAddCart: VoidFunction;
+    onSubmit: (itemId: number, ingredients: number[]) => void;
 }
 
 export const ChoosePizzaForm: React.FC<Props> = ({
@@ -30,7 +24,8 @@ export const ChoosePizzaForm: React.FC<Props> = ({
     items,
     imageUrl,
     ingredients,
-    onClickAddCart,
+    onSubmit,
+
     className,
 }) => {
     const {
@@ -38,6 +33,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
         size,
         selectedIngredients,
         availableSizes,
+        currentItemId,
         setSize,
         setType,
         addIngredients,
@@ -52,7 +48,9 @@ export const ChoosePizzaForm: React.FC<Props> = ({
     );
 
     const handleClickAdd = () => {
-        onClickAddCart();
+        if (currentItemId) {
+            onSubmit(currentItemId, Array.from(selectedIngredients));
+        }
     };
     return (
         <div className={cn(className, "flex flex-1")}>

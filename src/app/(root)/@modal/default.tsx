@@ -1,3 +1,3 @@
-export const Default = () => {
+export default function Default() {
     return null;
-};
+}
